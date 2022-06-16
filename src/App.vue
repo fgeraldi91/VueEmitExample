@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <ComponenteFilho msg="Teste" @textoComponenteFilho="setTextoComponenteFilho($event)"/>
+  <div>{{ textoComponenteFilho }}</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ComponenteFilho from './components/ComponenteFilho.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ComponenteFilho
+  },
+  data(){
+    return{
+      textoComponenteFilho:''
+    }
+  },
+  methods:{
+    setTextoComponenteFilho($event)
+    {
+      this.textoComponenteFilho = $event
+    },
   }
 }
 </script>
